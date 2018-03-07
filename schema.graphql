@@ -1,0 +1,11 @@
+# From schema.graphql
+# https://github.com/relayjs/relay-examples/blob/master/todo/data/schema.graphql
+
+schema {
+  query: Query
+}
+
+type Query {
+  id: ID
+  hello: String
+}
