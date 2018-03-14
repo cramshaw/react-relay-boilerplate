@@ -1,5 +1,6 @@
 import React from 'react';
 import {graphql, QueryRenderer} from 'react-relay';
+import Login from './Login'
 
 import environment from './relay';
 
@@ -11,6 +12,7 @@ export default class App extends React.Component {
         query={graphql`
           query AppHelloQuery {
             hello
+            username
           }
         `}
         variables={{}}
@@ -21,7 +23,10 @@ export default class App extends React.Component {
           if (!props) {
             return <div>Loading...</div>;
           }
-          return <div>Username: {props.hello}</div>;
+          return <div>
+          Username: {props.hello} {props.username}
+          <Login />
+          </div>;
         }}
       />
     );

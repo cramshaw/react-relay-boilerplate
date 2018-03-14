@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash ae5456054c7eb6edf9eea8f99db0787f
+ * @relayHash 212c701d312659aad99c915da9186d57
  */
 
 /* eslint-disable */
@@ -12,6 +12,7 @@ import type { ConcreteRequest } from 'relay-runtime';
 export type AppHelloQueryVariables = {| |};
 export type AppHelloQueryResponse = {|
   +hello: ?string,
+  +username: ?string,
 |};
 */
 
@@ -19,6 +20,7 @@ export type AppHelloQueryResponse = {|
 /*
 query AppHelloQuery {
   hello
+  username
 }
 */
 
@@ -30,6 +32,13 @@ var v0 = [
     "name": "hello",
     "args": null,
     "storageKey": null
+  },
+  {
+    "kind": "ScalarField",
+    "alias": null,
+    "name": "username",
+    "args": null,
+    "storageKey": null
   }
 ];
 return {
@@ -37,12 +46,12 @@ return {
   "operationKind": "query",
   "name": "AppHelloQuery",
   "id": null,
-  "text": "query AppHelloQuery {\n  hello\n}\n",
+  "text": "query AppHelloQuery {\n  hello\n  username\n}\n",
   "metadata": {},
   "fragment": {
     "kind": "Fragment",
     "name": "AppHelloQuery",
-    "type": "Query",
+    "type": "Root",
     "metadata": null,
     "argumentDefinitions": [],
     "selections": v0
@@ -55,5 +64,5 @@ return {
   }
 };
 })();
-(node/*: any*/).hash = '48d6b504263572465edb4e9b19474bf3';
+(node/*: any*/).hash = 'b480a781e18e661d6d5ab00dfe86d287';
 module.exports = node;
