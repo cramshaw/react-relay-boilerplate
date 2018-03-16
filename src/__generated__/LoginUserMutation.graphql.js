@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 1ddd968ad2257c65c218ff18e989a694
+ * @relayHash eaab9f1537dc68dbf16359a8acec4343
  */
 
 /* eslint-disable */
@@ -28,7 +28,6 @@ mutation LoginUserMutation(
 ) {
   login(username: $username, password: $password) {
     token
-    id
   }
 }
 */
@@ -50,31 +49,43 @@ var v0 = [
 ],
 v1 = [
   {
-    "kind": "Variable",
-    "name": "password",
-    "variableName": "password",
-    "type": "String!"
-  },
-  {
-    "kind": "Variable",
-    "name": "username",
-    "variableName": "username",
-    "type": "String!"
+    "kind": "LinkedField",
+    "alias": null,
+    "name": "login",
+    "storageKey": null,
+    "args": [
+      {
+        "kind": "Variable",
+        "name": "password",
+        "variableName": "password",
+        "type": "String!"
+      },
+      {
+        "kind": "Variable",
+        "name": "username",
+        "variableName": "username",
+        "type": "String!"
+      }
+    ],
+    "concreteType": "User",
+    "plural": false,
+    "selections": [
+      {
+        "kind": "ScalarField",
+        "alias": null,
+        "name": "token",
+        "args": null,
+        "storageKey": null
+      }
+    ]
   }
-],
-v2 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "token",
-  "args": null,
-  "storageKey": null
-};
+];
 return {
   "kind": "Request",
   "operationKind": "mutation",
   "name": "LoginUserMutation",
   "id": null,
-  "text": "mutation LoginUserMutation(\n  $username: String!\n  $password: String!\n) {\n  login(username: $username, password: $password) {\n    token\n    id\n  }\n}\n",
+  "text": "mutation LoginUserMutation(\n  $username: String!\n  $password: String!\n) {\n  login(username: $username, password: $password) {\n    token\n  }\n}\n",
   "metadata": {},
   "fragment": {
     "kind": "Fragment",
@@ -82,46 +93,13 @@ return {
     "type": "Mutation",
     "metadata": null,
     "argumentDefinitions": v0,
-    "selections": [
-      {
-        "kind": "LinkedField",
-        "alias": null,
-        "name": "login",
-        "storageKey": null,
-        "args": v1,
-        "concreteType": "User",
-        "plural": false,
-        "selections": [
-          v2
-        ]
-      }
-    ]
+    "selections": v1
   },
   "operation": {
     "kind": "Operation",
     "name": "LoginUserMutation",
     "argumentDefinitions": v0,
-    "selections": [
-      {
-        "kind": "LinkedField",
-        "alias": null,
-        "name": "login",
-        "storageKey": null,
-        "args": v1,
-        "concreteType": "User",
-        "plural": false,
-        "selections": [
-          v2,
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "id",
-            "args": null,
-            "storageKey": null
-          }
-        ]
-      }
-    ]
+    "selections": v1
   }
 };
 })();

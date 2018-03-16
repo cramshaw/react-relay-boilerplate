@@ -1,10 +1,11 @@
 # From schema.graphql
 # https://github.com/relayjs/relay-examples/blob/master/todo/data/schema.graphql
 
-schema {
-  query: Root
-  mutation: Mutation
-}
+# schema {
+#   query: Root
+#   mutation: Mutation
+# }
+
 #
 # type Root {
 #   id: ID
@@ -49,7 +50,7 @@ type Mutation {
   # easyLogin(username: String!): User
 }
 
-type Root {
+type Query {
   id: ID
   hello: String
   username: String
@@ -57,8 +58,8 @@ type Root {
 }
 
 type User {
-  id: ID
-  username: String
+  # id:
+  username: ID
   password: String
   token: String
 }

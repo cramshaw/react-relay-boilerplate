@@ -6,6 +6,7 @@ import environment from './relay';
 
 export default class App extends React.Component {
   render() {
+    console.log(this.props)
     return (
       <QueryRenderer
         environment={environment}
@@ -13,6 +14,7 @@ export default class App extends React.Component {
           query AppHelloQuery {
             hello
             username
+            ...Login_details
           }
         `}
         variables={{}}
@@ -24,8 +26,9 @@ export default class App extends React.Component {
             return <div>Loading...</div>;
           }
           return <div>
+          <input type="text" />
           Username: {props.hello} {props.username}
-          <Login />
+          <Login details={props} />
           </div>;
         }}
       />

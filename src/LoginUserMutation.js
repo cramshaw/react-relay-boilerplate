@@ -16,7 +16,6 @@ function commit(
   callback
 ) {
   // Now we just call commitMutation with the appropriate parameters
-  console.log('mutation commiting')
   return commitMutation(
     environment,
     {

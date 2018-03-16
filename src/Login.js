@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginMutation from './LoginUserMutation'
 import environment from './relay'
+import {graphql, createFragmentContainer} from 'react-relay'
 
 class Login extends React.Component {
 
@@ -27,8 +28,6 @@ class Login extends React.Component {
   };
 
   render() {
-    // Expects a `list` with a string `title`, as well as the information
-    // for the `<TodoItem>`s (we'll get that next).
     return (
       <div>
       <h1>
@@ -40,6 +39,8 @@ class Login extends React.Component {
       </h2>
       <h3>
         entered: {this.state.username}
+        <br/>
+        set by fragment: {this.props.details.username}
       </h3>
       <p>
         token: {this.state.token}
@@ -75,4 +76,13 @@ class Login extends React.Component {
   }
 }
 
-export default Login
+export default createFragmentContainer(
+  Login,
+  graphql`
+  # As a convention, we name the fragment as '<ComponentFileName>_<propName>'
+    fragment Login_details on Query {
+      hello
+      username
+    }
+  `
+)
